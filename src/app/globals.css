@@ -4,7 +4,7 @@
 
 @layer components {
   .header-right-text {
-    @apply text-gray px-12 rounded-md text-base h-10 font-bold md:text-lg hover:text-blue hover:bg-light-blue
+    @apply text-black px-12 rounded-md text-base h-10 font-bold md:text-lg hover:text-blue hover:bg-light-blue
   }
   .header-drawer-text {
     @apply p-12 text-[#9CA3AF] hover:text-blue

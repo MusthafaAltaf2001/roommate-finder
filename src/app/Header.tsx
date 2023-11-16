@@ -35,24 +35,23 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="bg-[#F8F8FF] flex h-16 md:px-[150px] xl:px-[450px] justify-center">
+            <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center">
                 <div className="flex flex-row justify-center items-center">
                     <div className="block max-md:hidden">
                         <div className="flex items-center justify-center">
-                            <button onClick={scrollToHome} className="header-right-text">HOME</button>
-                            <button onClick={scrollToAbout} className="header-right-text">ABOUT</button>
-                            <button onClick={scrollToProjects} className="header-right-text">PROJECTS</button>
-                            <button onClick={scrollToContact} className="header-right-text">CONTACT</button>
+                            <button onClick={scrollToHome} className="header-right-text">Home</button>
+                            <button onClick={scrollToAbout} className="header-right-text">About</button>
+                            <button onClick={scrollToProjects} className="header-right-text">Projects</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div ref={navRef} className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
-                    <span onClick={() => { navBarToggle(); scrollToHome(); }} className="header-drawer-text" href="/#">HOME</span>
-                    <span onClick={() => { navBarToggle(); scrollToAbout(); }} className="header-drawer-text">ABOUT</span>
-                    <span onClick={() => { navBarToggle(); scrollToProjects(); }} className="header-drawer-text">PROJECTS</span>
-                    <span onClick={() => { navBarToggle(); scrollToContact(); }} className="header-drawer-text" href="/#">CONTACT</span>
+                    <span onClick={() => { navBarToggle(); scrollToHome(); }} className="header-drawer-text" href="/#">Home</span>
+                    <span onClick={() => { navBarToggle(); scrollToAbout(); }} className="header-drawer-text">About</span>
+                    <span onClick={() => { navBarToggle(); scrollToProjects(); }} className="header-drawer-text">Projects</span>
+                    <span onClick={() => { navBarToggle(); scrollToContact(); }} className="header-drawer-text" href="/#">Contact</span>
                 </div>
             </div>
             <div className="z-200 absolute top-2 left-2 hidden max-md:block">
