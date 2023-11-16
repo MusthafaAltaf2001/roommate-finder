@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center">
+            <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center border-b-2 border-b-light-border">
                 <div className="flex flex-row justify-center items-center">
                     <div className="block max-md:hidden">
                         <div className="flex items-center justify-center">
