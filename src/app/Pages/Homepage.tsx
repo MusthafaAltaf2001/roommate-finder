@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState, useRef } from "react";
-import SearchBar from "../Components/SearchBar";
-import SearchFilter from "../Components/SearchFilter";
+import SearchBar from "../Components/Homepage/SearchBar";
+import SearchFilter from "../Components/Homepage/SearchFilter";
 
 const Homepage = () => {
 
