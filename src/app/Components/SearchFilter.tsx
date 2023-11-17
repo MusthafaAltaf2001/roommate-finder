@@ -1,6 +1,8 @@
 "use client"
 
 import React, { useState, useRef } from "react";
+import TuneIcon from '@mui/icons-material/Tune';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const SearchFilter = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +17,20 @@ const SearchFilter = () => {
 
     return (
         <div>
+            <div className="overflow-x-auto flex flex-row whitespace-nowrap">
+                <button className="homepage-search-filter-button">
+                    <TuneIcon className="text-black" />
+                    Filter
+                </button>
+                <button className="homepage-search-filter-button">
+                    Residential Type
+                    <KeyboardArrowDownIcon className="text-black" />
+                </button>
+                <button className="homepage-search-filter-button">
+                    Price
+                    <KeyboardArrowDownIcon className="text-black" />
+                </button>
+            </div>
             <div className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
                     <span className="header-drawer-text">Home</span>

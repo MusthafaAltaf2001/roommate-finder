@@ -6,7 +6,12 @@
   .header-right-text {
     @apply text-black px-12 rounded-md text-base h-10 font-bold md:text-lg hover:text-blue hover:bg-light-blue
   }
+
   .header-drawer-text {
     @apply p-12 text-[#9CA3AF] hover:text-blue
+  }
+
+  .homepage-search-filter-button {
+    @apply rounded-md p-2 bg-[#ECEEFF] text-black m-2
   }
 }
