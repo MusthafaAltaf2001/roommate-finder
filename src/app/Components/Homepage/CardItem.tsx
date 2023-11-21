@@ -5,7 +5,7 @@ import Image from 'next/image'
 const CardItem = () => {
     return (
         <div className='flex flex-col basis-auto border-0 rounded-xl'>
-            <Image src={house_img} alt="Image" className='border-0 rounded-t-xl w-[400px] h-[250px] object-cover' />
+            <Image src={house_img} alt="Image" className='border-0 rounded-t-xl w-[400px] lg:h-[150px] h-[250px] object-cover' />
             <div className='flex flex-col p-5 bg-[#ECEEFF] rounded-b-xl'>
                 <div className='flex items-baseline'>
                     <span className='text-blue font-bold text-[30px]'>$300</span>
