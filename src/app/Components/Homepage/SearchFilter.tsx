@@ -20,7 +20,7 @@ const SearchFilter = () => {
 
     return (
         <div>
-            <div className="flex flex-col bg-white border-border-colour rounded-lg border-2 m-2 md:flex-row md:justify-between">
+            <div className="flex flex-col bg-white border-border-colour rounded-lg border-2 m-2 md:flex-row md:justify-between overflow-x-auto">
                 <div className="flex flex-row items-center">
                     <TuneIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
@@ -35,21 +35,21 @@ const SearchFilter = () => {
                         <KeyboardArrowDownIcon className="text-black" />
                     </button>
                 </div>
-                <div className="flex flex-row items-center">
-                    <AttachMoneyIcon className="homepage-search-filter-icon" />
-                    <button className="homepage-search-filter-button">
-                        Price
-                        <KeyboardArrowDownIcon className="text-black" />
-                    </button>
-                </div>
-                <div className="flex flex-row items-center">
+                <div className="md:hidden lg:flex flex flex-row items-center">
                     <CalendarMonthIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
                         Move in Date
                         <KeyboardArrowDownIcon className="text-black" />
                     </button>
                 </div>
-                <button className="rounded-md bg-purple m-3 text-off-white text-2xl py-2 px-5">
+                <div className="md:hidden xl:flex flex flex-row items-center">
+                    <AttachMoneyIcon className="homepage-search-filter-icon" />
+                    <button className="homepage-search-filter-button">
+                        Price
+                        <KeyboardArrowDownIcon className="text-black" />
+                    </button>
+                </div>
+                <button className="rounded-md bg-purple m-3 text-off-white text-2xl py-2 px-5 shadow-lg">
                     Search
                 </button>
 
