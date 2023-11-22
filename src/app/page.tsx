@@ -3,7 +3,7 @@ import Header from "./Header"
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-off-white">
       <Header />
       <Homepage />
     </main>

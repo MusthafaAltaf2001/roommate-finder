@@ -8,13 +8,11 @@ export const config: Config = {
   ],
   theme: {
     colors: {
-      'blue': '#0061E0',
-      'light-blue': '#B9D5FF',
-      'light-purple': '#A3A7DE',
-      'white': '#F8F8FF',
-      'gray': '#454655',
-      'black': '#1F2645',
-      'light-border': '#E1DEF6'
+      'purple': '#7065F0',
+      'white': '#FBFAFF',
+      'off-white': '#F7F6FC',
+      'black': '#010928',
+      'border-colour': '#E1DEF6'
     },
     screens: {
       xs: '350px',

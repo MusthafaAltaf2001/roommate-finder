@@ -31,12 +31,12 @@ const SearchFilter = () => {
                     <KeyboardArrowDownIcon className="text-black" />
                 </button>
             </div>
-            <div className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
+            {/* <div className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
                     <span className="header-drawer-text">Home</span>
                 </div>
-            </div>
-            <div className="z-200 absolute top-2 left-2 hidden max-md:block">
+            </div> */}
+            {/* <div className="z-200 absolute top-2 left-2 hidden max-md:block">
                 <button
                     className="flex flex-col h-12 w-12 rounded justify-center items-center group"
                     onClick={navBarToggle}
@@ -55,7 +55,7 @@ const SearchFilter = () => {
                             }`}
                     />
                 </button>
-            </div>
+            </div> */}
         </div>
     )
 }
