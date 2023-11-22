@@ -2,6 +2,9 @@
 
 import React, { useState, useRef } from "react";
 import TuneIcon from '@mui/icons-material/Tune';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const SearchFilter = () => {
@@ -17,19 +20,39 @@ const SearchFilter = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto flex flex-row whitespace-nowrap">
-                <button className="homepage-search-filter-button">
-                    <TuneIcon className="text-black" />
-                    Filter
+            <div className="flex flex-col bg-white border-border-colour rounded-lg border-2 m-2 md:flex-row md:justify-between">
+                <div className="flex flex-row items-center">
+                    <TuneIcon className="homepage-search-filter-icon" />
+                    <button className="homepage-search-filter-button">
+                        Filters
+                        <KeyboardArrowDownIcon className="text-black" />
+                    </button>
+                </div>
+                <div className="flex flex-row items-center">
+                    <ApartmentIcon className="homepage-search-filter-icon" />
+                    <button className="homepage-search-filter-button">
+                        Residential Type
+                        <KeyboardArrowDownIcon className="text-black" />
+                    </button>
+                </div>
+                <div className="flex flex-row items-center">
+                    <AttachMoneyIcon className="homepage-search-filter-icon" />
+                    <button className="homepage-search-filter-button">
+                        Price
+                        <KeyboardArrowDownIcon className="text-black" />
+                    </button>
+                </div>
+                <div className="flex flex-row items-center">
+                    <CalendarMonthIcon className="homepage-search-filter-icon" />
+                    <button className="homepage-search-filter-button">
+                        Move in Date
+                        <KeyboardArrowDownIcon className="text-black" />
+                    </button>
+                </div>
+                <button className="rounded-md bg-purple m-3 text-off-white text-2xl py-2 px-5">
+                    Search
                 </button>
-                <button className="homepage-search-filter-button">
-                    Residential Type
-                    <KeyboardArrowDownIcon className="text-black" />
-                </button>
-                <button className="homepage-search-filter-button">
-                    Price
-                    <KeyboardArrowDownIcon className="text-black" />
-                </button>
+
             </div>
             {/* <div className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">

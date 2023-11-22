@@ -8,6 +8,10 @@
   }
 
   .homepage-search-filter-button {
-    @apply rounded-md p-2 bg-white text-black m-2 shadow-inner
+    @apply rounded-md p-2 bg-white text-black m-3 border-2 border-border-colour flex justify-between w-full whitespace-nowrap
+  }
+
+  .homepage-search-filter-icon {
+    @apply text-black border-2 p-1 rounded-md border-border-colour text-[42px] ml-3
   }
 }
