@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState, useRef } from "react";
-import Switch from '@mui/material/Switch';
-import { motion } from "framer-motion";
+import sun from './Assets/icons/sun.svg'
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +39,7 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <label className="absolute top-2 right-5 bg-black w-20 h-10 rounded-full z-100">
-                <input type="checkbox" id="check" className="sr-only peer" />
-                <span className="w-2/5 h-4/5 bg-white absolute rounded-full left-1 top-1 peer-checked:bg-blue peer-checked:left-11 transition-all duration-500"></span>
-            </label>
+            <DarkModeToggle />
             <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center border-b-2 border-b-border-colour">
                 <div className="flex flex-row justify-center items-center">
                     <div className="block max-md:hidden">
