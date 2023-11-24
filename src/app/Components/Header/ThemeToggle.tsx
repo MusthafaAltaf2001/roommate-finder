@@ -15,32 +15,38 @@ const ThemeToggle = () => {
             cx: 12,
             cy: 4,
             opacity: 0,
+            stroke: 'black',
+            fill: 'black'
         },
         light: {
             r: 5,
             transform: "rotate(90deg)",
             cx: 30,
             cy: 0,
-            opacity: 1
+            opacity: 1,
+            stroke: 'yellow',
+            fill: 'yellow'
         },
         springConfig: { mass: 4, tension: 250, friction: 35 }
     };
 
-    const { r, transform, cx, cy, opacity } = properties[
+    const { r, transform, cx, cy, opacity, stroke, fill } = properties[
         isDarkMode ? "dark" : "light"
     ];
 
     const svgContainerProps = useSpring({
         transform,
+        stroke,
         config: properties.springConfig
     });
-    const centerCircleProps = useSpring({ r, config: properties.springConfig });
+    const centerCircleProps = useSpring({ r, fill, config: properties.springConfig });
     const maskedCircleProps = useSpring({
         cx,
         cy,
+        fill,
         config: properties.springConfig
     });
-    const linesProps = useSpring({ opacity, config: properties.springConfig });
+    const linesProps = useSpring({ opacity, stroke, config: properties.springConfig });
 
     return (
         <div >
@@ -56,25 +62,27 @@ const ThemeToggle = () => {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        stroke="currentColor"
                         style={{
                             cursor: "pointer",
                             ...svgContainerProps
                         }}
                     >
+                        # Moon
                         <mask id="myMask2">
                             <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                            <animated.circle style={maskedCircleProps} r="9" fill="black" />
+                            <animated.circle style={maskedCircleProps} r="9" />
                         </mask>
 
+                        # Circle of the sun
                         <animated.circle
                             cx="12"
                             cy="12"
                             style={centerCircleProps}
-                            fill="black"
                             mask="url(#myMask2)"
                         />
-                        <animated.g stroke="currentColor" style={linesProps}>
+
+                        # Outer lines of the suns' circle
+                        <animated.g style={linesProps}>
                             <line x1="12" y1="1" x2="12" y2="3" />
                             <line x1="12" y1="21" x2="12" y2="23" />
                             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
