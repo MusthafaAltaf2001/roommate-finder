@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 
-const DarkModeToggle = () => {
+const ThemeToggle = () => {
     const [isDarkMode, setDarkMode] = useState(false);
 
     const toggleDarkMode = () => {
@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
             transform: "rotate(40deg)",
             cx: 12,
             cy: 4,
-            opacity: 0
+            opacity: 0,
         },
         light: {
             r: 5,
@@ -43,9 +43,9 @@ const DarkModeToggle = () => {
     const linesProps = useSpring({ opacity, config: properties.springConfig });
 
     return (
-        <div>
-            <label className="absolute top-2 right-5 bg-purple w-20 h-10 rounded-full z-100">
-                <input type="checkbox" id="check" className="sr-only peer" />
+        <div >
+            <label className="absolute top-2 right-5 bg-purple w-20 h-10 rounded-full z-100" >
+                <input onClick={toggleDarkMode} type="checkbox" id="check" className="sr-only peer" />
                 <span className="w-2/5 h-4/5 flex justify-center items-center bg-white absolute rounded-full left-1 top-1 peer-checked:bg-blue peer-checked:left-11 transition-all duration-500">
                     <animated.svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,6 @@ const DarkModeToggle = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         stroke="currentColor"
-                        onClick={toggleDarkMode}
                         style={{
                             cursor: "pointer",
                             ...svgContainerProps
@@ -92,4 +91,4 @@ const DarkModeToggle = () => {
     )
 }
 
-export default DarkModeToggle
+export default ThemeToggle

@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import sun from './Assets/icons/sun.svg'
-import DarkModeToggle from "./DarkModeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <DarkModeToggle />
+            <ThemeToggle />
             <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center border-b-2 border-b-border-colour">
                 <div className="flex flex-row justify-center items-center">
                     <div className="block max-md:hidden">
