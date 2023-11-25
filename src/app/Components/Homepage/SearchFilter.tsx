@@ -24,7 +24,7 @@ const SearchFilter = () => {
                 <div className="flex flex-row items-center">
                     <TuneIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
-                        Filters
+                        Filter
                         <KeyboardArrowDownIcon className="text-black" />
                     </button>
                 </div>
