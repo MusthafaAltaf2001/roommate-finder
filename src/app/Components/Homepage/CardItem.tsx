@@ -4,14 +4,14 @@ import Image from 'next/image'
 
 const CardItem = () => {
     return (
-        <div className='flex flex-col basis-auto border-0 rounded-xl shadow-lg'>
+        <div className='flex flex-col basis-auto border-0 rounded-xl shadow-lg max-w-[400px]'>
             <Image src={house_img} alt="Image" className='border-0 rounded-t-xl w-[400px] lg:h-[150px] h-[250px] object-cover' />
             <div className='flex flex-col p-5 bg-white rounded-b-xl'>
                 <div className='flex items-baseline'>
                     <span className='text-purple font-bold text-[30px]'>$300</span>
                     <span className='text-[#8A8DBA]'>/month</span>
                 </div>
-                <span className='text-black font-bold text-[35px]'>Subang Jaya</span>
+                <span className='text-black font-bold text-[30px]'>Subang Jaya lasdjfsdfsdf slkdfjaskldfj</span>
                 <span className='text-[#8A8DBA]'>7, Jalan PJS 11/7, Bandar Sunway</span>
             </div>
         </div>
