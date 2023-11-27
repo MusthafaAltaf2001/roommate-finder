@@ -42,6 +42,8 @@ const Header = () => {
                             <button onClick={scrollToHome} className="header-right-text">Home</button>
                             <button onClick={scrollToAbout} className="header-right-text">About</button>
                             <button onClick={scrollToProjects} className="header-right-text">Projects</button>
+                            <button className="border-2 rounded-lg border-border-colour text-purple px-4 py-2 font-bold mx-3">Login</button>
+                            <button className="rounded-lg  text-white font-bold bg-purple whitespace-nowrap px-4 py-2 mx-3">Sign up</button>
                         </div>
                     </div>
                 </div>

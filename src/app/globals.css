@@ -4,14 +4,14 @@
 
 @layer components {
   .header-right-text {
-    @apply text-black px-12 rounded-md text-base h-10 font-bold md:text-lg
+    @apply text-dark-blue px-12 rounded-md text-base h-10 font-bold md:text-lg
   }
 
   .homepage-search-filter-button {
-    @apply rounded-md p-2 bg-white text-black m-3 border-2 border-border-colour flex justify-between w-full whitespace-nowrap
+    @apply rounded-md p-2 bg-white text-dark-blue m-3 border-2 border-border-colour flex justify-between w-full whitespace-nowrap
   }
 
   .homepage-search-filter-icon {
-    @apply text-black border-2 p-1 rounded-md border-border-colour text-[42px] ml-3
+    @apply text-dark-blue border-2 p-1 rounded-md border-border-colour text-[42px] ml-3
   }
 }

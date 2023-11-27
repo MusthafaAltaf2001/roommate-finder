@@ -25,28 +25,28 @@ const SearchFilter = () => {
                     <TuneIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
                         Filter
-                        <KeyboardArrowDownIcon className="text-black" />
+                        <KeyboardArrowDownIcon className="text-dark-blue" />
                     </button>
                 </div>
                 <div className="flex flex-row items-center">
                     <ApartmentIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
                         Residential Type
-                        <KeyboardArrowDownIcon className="text-black" />
+                        <KeyboardArrowDownIcon className="text-dark-blue" />
                     </button>
                 </div>
                 <div className="md:hidden lg:flex flex flex-row items-center">
                     <CalendarMonthIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
                         Move in Date
-                        <KeyboardArrowDownIcon className="text-black" />
+                        <KeyboardArrowDownIcon className="text-dark-blue" />
                     </button>
                 </div>
                 <div className="md:hidden xl:flex flex flex-row items-center">
                     <AttachMoneyIcon className="homepage-search-filter-icon" />
                     <button className="homepage-search-filter-button">
                         Price
-                        <KeyboardArrowDownIcon className="text-black" />
+                        <KeyboardArrowDownIcon className="text-dark-blue" />
                     </button>
                 </div>
                 <button className="rounded-md bg-purple m-3 text-off-white text-2xl py-2 px-5 shadow-lg">

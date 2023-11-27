@@ -11,7 +11,7 @@ const CardItem = () => {
                     <span className='text-purple font-bold text-[30px]'>$300</span>
                     <span className='text-[#8A8DBA]'>/month</span>
                 </div>
-                <span className='text-black font-bold text-[30px]'>Subang Jaya lasdjfsdfsdf slkdfjaskldfj</span>
+                <span className='text-dark-blue font-bold text-[30px]'>Subang Jaya lasdjfsdfsdf slkdfjaskldfj</span>
                 <span className='text-[#8A8DBA]'>7, Jalan PJS 11/7, Bandar Sunway</span>
             </div>
         </div>

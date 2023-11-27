@@ -11,7 +11,7 @@ export const config: Config = {
       'purple': '#7065F0',
       'white': '#FBFAFF',
       'off-white': '#F7F6FC',
-      'black': '#010928',
+      'dark-blue': '#010928',
       'border-colour': '#E1DEF6'
     },
     screens: {
