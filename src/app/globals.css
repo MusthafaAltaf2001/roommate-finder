@@ -14,4 +14,8 @@
   .homepage-search-filter-icon {
     @apply text-dark-blue border-2 p-1 rounded-md border-border-colour text-[42px] ml-3
   }
+
+  .header-drawer-text {
+    @apply p-12 text-dark-blue font-bold
+  }
 }

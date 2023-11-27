@@ -31,7 +31,7 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
 
-    const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-[#FFFFFF] transition ease transform duration-300 z-200`;
+    const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
     return (
         <header id="header" className="sticky top-0 z-40">
@@ -48,7 +48,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {/* <div ref={navRef} className={`absolute left-0 top-0 bg-[#111827] ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
+            <div ref={navRef} className={`absolute left-0 top-0 bg-off-white ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
                     <span onClick={() => { navBarToggle(); scrollToHome(); }} className="header-drawer-text" href="/#">Home</span>
                     <span onClick={() => { navBarToggle(); scrollToAbout(); }} className="header-drawer-text">About</span>
@@ -75,7 +75,7 @@ const Header = () => {
                             }`}
                     />
                 </button>
-            </div> */}
+            </div>
         </header>
     );
 }
