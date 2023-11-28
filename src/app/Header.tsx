@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useRef } from "react";
+import Register from "./Components/Register/Register";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,23 +32,30 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
 
+    const register = () => {
+        const register = document.getElementById('register')
+        register.classList.toggle("hidden")
+    }
+
     const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-center border-b-2 border-b-border-colour">
-                <div className="flex flex-row justify-center items-center">
+            <div className="absolute top-20 hidden right-0 z-50" id="register">
+                <Register />
+            </div>
+            <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-end md:justify-center border-b-2 border-b-border-colour">
+                <div className="flex flex-row justify-end md:justify-center items-center">
                     <div className="block max-md:hidden">
                         <div className="flex items-center justify-center">
                             <button onClick={scrollToHome} className="header-right-text">Home</button>
                             <button onClick={scrollToAbout} className="header-right-text">About</button>
                             <button onClick={scrollToProjects} className="header-right-text">Projects</button>
-                            <button className="border-2 rounded-lg border-border-colour text-purple px-4 py-2 font-bold mx-3">Login</button>
-                            <button className="rounded-lg  text-white font-bold bg-purple whitespace-nowrap px-4 py-2 mx-3">Sign up</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <button onClick={register} className="border-2 rounded-lg absolute top-2 right-0 border-border-colour text-purple px-4 py-2 font-bold mx-3">Login</button>
             <div ref={navRef} className={`absolute left-0 top-0 bg-off-white ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
                     <span onClick={() => { navBarToggle(); scrollToHome(); }} className="header-drawer-text" href="/#">Home</span>
