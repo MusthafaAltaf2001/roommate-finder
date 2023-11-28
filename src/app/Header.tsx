@@ -41,7 +41,7 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="absolute top-20 hidden right-0 z-50" id="register">
+            <div className="absolute mx-auto left-0 right-0 z-50" id="register">
                 <Register />
             </div>
             <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-end md:justify-center border-b-2 border-b-border-colour">
