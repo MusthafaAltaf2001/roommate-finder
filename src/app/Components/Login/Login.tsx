@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import google_icon from "../../Assets/google_icon.svg";
+import GoogleIcon from "../../Assets/google_icon.svg";
 import Image from "next/image";
 import LoginRegisterSvg from "../../Assets/login_register_img.svg";
 
@@ -45,10 +45,8 @@ const Login = () => {
         </div>
         <div className="flex items-center justify-center border-t-2 border-border-colour py-8">
           <button className="flex w-[280px] flex-row items-center justify-center rounded-lg border-2 border-border-colour py-2 font-semibold shadow-2xl">
-            <Image
-              className="mr-2 h-6 w-6 pr-1"
-              src={google_icon}
-              alt="image"
+            <GoogleIcon
+              className="mr-2 h-8 w-8 pr-1"
             />
             Continue with Google
           </button>
