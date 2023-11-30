@@ -1,20 +1,21 @@
 "use client";
 
 import React from "react";
+import { useRouter } from 'next/navigation'
 import GoogleIcon from "../../Assets/google_icon.svg";
-import Image from "next/image";
 import LoginRegisterSvg from "../../Assets/login_register_img.svg";
 
 const Login = () => {
-  const openRegister = () => {
-    const openRegister = document.getElementById("register");
-    openRegister.classList.toggle("hidden");
-  };
+  const router = useRouter()
+
+  const register = () => {
+    router.push('register')
+  }
 
   return (
     <div className="flex h-fit min-h-screen max-w-screen flex-col lg:flex-row items-center justify-around bg-white">
       <div className="m-8 hidden xs:block justify-start items-center">
-        <LoginRegisterSvg className="w-fit h-[250px] sm:h-[350px] md:h-[350px] lg:h-[450px] xl:h-[800px]"/>
+        <LoginRegisterSvg className="w-fit h-[250px] sm:h-[350px] md:h-[350px] lg:h-[450px] xl:h-[700px]"/>
       </div>
       <div className="flex h-fit flex-col items-center justify-center md:h-3/4">
         <div className="mx-2 mt-6 flex w-[280px] flex-col">
@@ -57,9 +58,7 @@ const Login = () => {
           </span>
           <button
             className="font-bold text-purple"
-            onClick={() => {
-              openRegister();
-            }}
+            onClick={register}
           >
             &nbsp;Sign up
           </button>

@@ -1,58 +1,82 @@
-"use client"
+"use client";
 
-import React from 'react'
-import google_icon from '../../Assets/google_icon.svg'
-import Image from 'next/image'
-import CloseIcon from '@mui/icons-material/Close';
+import React from "react";
+import GoogleIcon from "../../Assets/google_icon.svg";
+import LoginRegisterSvg from "../../Assets/login_register_img.svg";
+import { useRouter } from 'next/navigation'
 
 const Register = () => {
-    const closeRegister = () => {
-        console.log('relkj')
+    const router = useRouter()
+
+    const login = () => {
+        router.push('login')
     }
 
-    return (
-        <div className='flex flex-col border-2 bg-white border-border-colour max-w-[800px] rounded-lg'>
-            <div className='flex justify-end m-3'>
-                <button onClick={closeRegister}>
-                    <CloseIcon />
-                </button>
-            </div>
-            <div className='flex flex-col items-center h-screen md:h-3/4 justify-center'>
-                <div className='flex flex-col mt-6 mx-2 w-[280px]'>
-                    <label>Your name</label>
-                    <input className='border-2 rounded-md border-border-colour h-10' type='text' name="myInput" placeholder='Enter first name' />
-                </div>
-                <div className='flex flex-col mt-6 mx-2 w-[280px]'>
-                    <label>Email address</label>
-                    <input className='border-2 rounded-md border-border-colour h-10' type='email' name="myInput" placeholder='Enter your email' />
-                </div>
-                <div className='flex flex-col mt-6 mx-2 w-[280px]'>
-                    <label>Password</label>
-                    <input className='border-2 rounded-md border-border-colour h-10' type='password' name="myInput" placeholder='Enter your password' />
-                </div>
-                <div className='flex flex-col mt-6 mx-2 w-[280px]'>
-                    <label>Confirm Password</label>
-                    <input className='border-2 rounded-md border-border-colour h-10' type='password' name="myInput" placeholder='Confirm your password' />
-                </div>
-                <div className='flex items-center justify-center my-3'>
-                    <button className="text-white rounded-lg mt-6 py-2 font-bold mx-3 bg-purple w-[280px]">Sign up</button>
-                </div>
-                <div className='flex items-center justify-center my-2'>
-                    <button className='text-purple font-bold'>Forgot Password?</button>
-                </div>
-                <div className='my-10 flex items-center justify-center'>
-                    <button className='flex flex-row items-center justify-center w-[280px] shadow-2xl border-2 rounded-lg border-border-colour py-2 font-semibold'>
-                        <Image className='w-6 h-6 pr-1 mr-2' src={google_icon} alt='image' />
-                        Continue with Google
-                    </button>
-                </div>
-                <div className='mt-10 mb-2'>
-                    <span className='text-dark-blue font-bold'>You don't have an account?</span>
-                    <button className='text-purple font-bold' onClick={closeRegister}>&nbsp;Sign up</button>
-                </div>
-            </div>
+  return (
+    <div className="flex h-fit min-h-screen max-w-screen flex-col lg:flex-row items-center justify-around bg-white">
+      <div className="m-8 hidden items-center justify-start xs:block">
+        <LoginRegisterSvg className="h-[250px] w-fit sm:h-[350px] md:h-[350px] lg:h-[450px] xl:h-[700px]" />
+      </div>
+      <div className="flex h-screen flex-col items-center justify-center md:h-3/4">
+        <div className="mx-2 mt-6 flex w-[280px] flex-col">
+          <label className="pl-3">Your name</label>
+          <input
+            className="h-10 pl-3 rounded-md border-2 border-border-colour"
+            type="text"
+            name="myInput"
+            placeholder="Enter first name"
+          />
         </div>
-    )
-}
+        <div className="mx-2 mt-6 flex w-[280px] flex-col">
+          <label className="pl-3">Email address</label>
+          <input
+            className="pl-3 h-10 rounded-md border-2 border-border-colour"
+            type="email"
+            name="myInput"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div className="mx-2 mt-6 flex w-[280px] flex-col">
+          <label className="pl-3">Password</label>
+          <input
+            className="pl-3 h-10 rounded-md border-2 border-border-colour"
+            type="password"
+            name="myInput"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div className="mx-2 mt-6 flex w-[280px] flex-col">
+          <label className="pl-3">Confirm Password</label>
+          <input
+            className="pl-3 h-10 rounded-md border-2 border-border-colour"
+            type="password"
+            name="myInput"
+            placeholder="Confirm your password"
+          />
+        </div>
+        <div className="my-3 flex items-center justify-center">
+          <button className="mx-3 mt-6 w-[280px] rounded-lg bg-purple py-2 font-bold text-white">
+            Sign up
+          </button>
+        </div>
+        <div className="my-2 flex items-center justify-center pb-4">
+          <button className="font-bold text-purple">Forgot Password?</button>
+        </div>
+        <div className="flex items-center justify-center border-t-2 border-border-colour py-8">
+          <button className="flex w-[280px] flex-row items-center justify-center rounded-lg border-2 border-border-colour py-2 font-semibold shadow-2xl">
+            <GoogleIcon className="mr-2 h-8 w-8 pr-1" />
+            Continue with Google
+          </button>
+        </div>
+        <div className="mb-2 mt-2">
+          <span className="font-bold text-dark-blue">
+            Already have an account?
+          </span>
+          <button className="font-bold text-purple" onClick={login}>&nbsp;Sign in</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Register
+export default Register;
