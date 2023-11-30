@@ -6,6 +6,6 @@ export default function Home() {
     <main className="bg-off-white">
       <Header />
       <Homepage />
-    </main>
+    </main> 
   )
 }

@@ -12,9 +12,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-fit min-h-screen w-screen flex-col lg:flex-row items-center justify-around bg-white">
+    <div className="flex h-fit min-h-screen max-w-screen flex-col lg:flex-row items-center justify-around bg-white">
       <div className="m-8 hidden xs:block justify-start items-center">
-        <LoginRegisterSvg className="w-fit h-[250px] sm:h-[350px] md:h-[450px] xl:h-[800px]"/>
+        <LoginRegisterSvg className="w-fit h-[250px] sm:h-[350px] md:h-[350px] lg:h-[450px] xl:h-[800px]"/>
       </div>
       <div className="flex h-fit flex-col items-center justify-center md:h-3/4">
         <div className="mx-2 mt-6 flex w-[280px] flex-col">

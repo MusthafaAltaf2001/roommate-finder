@@ -1,11 +1,12 @@
 "use client"
 
 import React, { useState, useRef } from "react";
-import Login from "./Components/Login/Login";
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navRef = useRef()
+    const router = useRouter()
 
     const navBarToggle = () => {
         setIsOpen(!isOpen)
@@ -33,17 +34,13 @@ const Header = () => {
     }
 
     const login = () => {
-        const register = document.getElementById('login')
-        register.classList.toggle("hidden")
+        router.push('/login')
     }
 
     const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="absolute mx-0 hidden inset-0 md:left-1/4 xl:left-1/3 md:right-1/4 xl:right-1/3 md:top-24 z-50" id="login">
-                <Login />
-            </div>
             <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-end md:justify-center border-b-2 border-b-border-colour">
                 <div className="flex flex-row justify-end md:justify-center items-center">
                     <div className="block max-md:hidden">
