@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useRef } from "react";
-import Register from "./Components/Register/Register";
+import Login from "./Components/Login/Login";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +32,8 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
 
-    const register = () => {
-        const register = document.getElementById('register')
+    const login = () => {
+        const register = document.getElementById('login')
         register.classList.toggle("hidden")
     }
 
@@ -41,8 +41,8 @@ const Header = () => {
 
     return (
         <header id="header" className="sticky top-0 z-40">
-            <div className="absolute mx-0 inset-0 md:left-1/4 xl:left-1/3 md:right-1/4 xl:right-1/3 md:top-24 z-50" id="register">
-                <Register />
+            <div className="absolute mx-0 hidden inset-0 md:left-1/4 xl:left-1/3 md:right-1/4 xl:right-1/3 md:top-24 z-50" id="login">
+                <Login />
             </div>
             <div className="bg-white flex h-16 md:px-[150px] xl:px-[450px] justify-end md:justify-center border-b-2 border-b-border-colour">
                 <div className="flex flex-row justify-end md:justify-center items-center">
@@ -55,7 +55,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <button onClick={register} className="border-2 rounded-lg absolute top-2 right-0 border-border-colour text-purple px-4 py-2 font-bold mx-3">Login</button>
+            <button onClick={login} className="border-2 rounded-lg absolute top-2 right-0 border-border-colour text-purple px-4 py-2 font-bold mx-3">Login</button>
             <div ref={navRef} className={`absolute left-0 top-0 bg-off-white ease-in-out duration-500 ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}>
                 <div className="flex flex-col items-center justify-center pt-10 h-screen w-screen">
                     <span onClick={() => { navBarToggle(); scrollToHome(); }} className="header-drawer-text" href="/#">Home</span>
