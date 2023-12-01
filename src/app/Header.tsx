@@ -2,9 +2,12 @@
 
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const navRef = useRef();
   const router = useRouter();
 
@@ -58,11 +61,18 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <button
+      {/* <button
         onClick={login}
         className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-4 py-2 font-bold text-purple"
       >
         Login
+      </button> */}
+      <button className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium">
+        <div className="flex flex-row items-center">
+          <AccountCircleIcon className="m-0.5 text-[35px]" />
+          <span className="m-0.5">Musthafa</span>
+          <KeyboardArrowDownIcon className="m-0.5" />
+        </div>
       </button>
       <div
         ref={navRef}
