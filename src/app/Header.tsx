@@ -1,15 +1,26 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Signout from "./Components/Header/Signout";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const navRef = useRef();
   const router = useRouter();
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    if (session) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  }, []);
 
   const navBarToggle = () => {
     setIsOpen(!isOpen);
@@ -40,6 +51,11 @@ const Header = () => {
     router.push("/login");
   };
 
+  const showSignOutButton = () => {
+    const signoutButton = document.getElementById("signoutbutton");
+    signoutButton?.classList.toggle("hidden");
+  };
+
   const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
   return (
@@ -61,19 +77,31 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* <button
-        onClick={login}
-        className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-4 py-2 font-bold text-purple"
+      {loggedIn ? (
+        <button
+          onClick={login}
+          className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-4 py-2 font-bold text-purple"
+        >
+          Login
+        </button>
+      ) : (
+        <button
+          className="absolute right-0 top-2 mx-3 w-52 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium"
+          onClick={showSignOutButton}
+        >
+          <div className="flex flex-row items-center">
+            <AccountCircleIcon className="m-0.5 text-[35px]" />
+            <span className="m-0.5">{session?.user?.name}</span>
+            <KeyboardArrowDownIcon className="m-0.5" />
+          </div>
+        </button>
+      )}
+      <div
+        className="absolute right-0 top-14 mx-3 hidden rounded-lg border-2 border-border-colour bg-white px-4 py-2 font-medium"
+        id="signoutbutton"
       >
-        Login
-      </button> */}
-      <button className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium">
-        <div className="flex flex-row items-center">
-          <AccountCircleIcon className="m-0.5 text-[35px]" />
-          <span className="m-0.5">Musthafa</span>
-          <KeyboardArrowDownIcon className="m-0.5" />
-        </div>
-      </button>
+        <Signout />
+      </div>
       <div
         ref={navRef}
         className={`absolute left-0 top-0 bg-off-white duration-500 ease-in-out ${
