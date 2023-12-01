@@ -1,19 +1,27 @@
-"use client"
+"use client";
 
 import React, { useState, useRef } from "react";
 import SearchBar from "../Components/Homepage/SearchBar";
 import SearchFilter from "../Components/Homepage/SearchFilter";
 import CardList from "../Components/Homepage/CardList";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Homepage = () => {
+  const { data: session } = useSession();
+
+  if (session) {
+    console.log(session?.user?.name);
+  } else {
+    console.log(session);
+  }
 
   return (
-    <div className='flex flex-col mx-[5%] lg:mx-[10%] xl:mx-[15%] my-8 bg-off-white'>
+    <div className="mx-[5%] my-8 flex flex-col bg-off-white lg:mx-[10%] xl:mx-[15%]">
       <SearchBar />
       <SearchFilter />
       <CardList />
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
