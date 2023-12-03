@@ -1,27 +1,12 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { signIn, signOut, useSession } from "next-auth/react";
+import React, { useState, useRef } from "react";
 import Signout from "./Components/Header/Signout";
+import AuthState from "./Components/Header/AuthState";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef();
-  const router = useRouter();
-  const { data: session } = useSession();
-
-  // useEffect(() => {
-  //   if (session) {
-  //     setLoggedIn(true);
-  //   } else {
-  //     setLoggedIn(false);
-  //   }
-  // }, []);
-
-  console.log(session);
 
   const navBarToggle = () => {
     setIsOpen(!isOpen);
@@ -48,15 +33,6 @@ const Header = () => {
     element.scrollIntoView({ behavior: "smooth" });
   };
 
-  const login = () => {
-    router.push("/login");
-  };
-
-  const showSignOutButton = () => {
-    const signoutButton = document.getElementById("signoutbutton");
-    signoutButton?.classList.toggle("hidden");
-  };
-
   const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
   return (
@@ -78,25 +54,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {session ? (
-        <button
-          className="absolute right-0 top-2 mx-3 w-52 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium"
-          onClick={showSignOutButton}
-        >
-          <div className="flex flex-row items-center">
-            <AccountCircleIcon className="m-0.5 text-[35px]" />
-            <span className="m-0.5">{session?.user?.name}</span>
-            <KeyboardArrowDownIcon className="m-0.5" />
-          </div>
-        </button>
-      ) : (
-        <button
-          onClick={login}
-          className="absolute right-0 top-2 mx-3 rounded-lg border-2 border-border-colour px-4 py-2 font-bold text-purple"
-        >
-          Login
-        </button>
-      )}
+      <AuthState />
       <div
         className="absolute right-0 top-14 mx-3 hidden rounded-lg border-2 border-border-colour bg-white px-4 py-2 font-medium"
         id="signoutbutton"
