@@ -3,6 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 const AuthState = () => {
   const { data: session } = useSession();
@@ -14,6 +15,8 @@ const AuthState = () => {
     signoutButton?.classList.toggle("hidden");
   };
 
+  console.log(session?.user);
+
   const login = () => {
     router.push("/login");
   };
@@ -21,7 +24,7 @@ const AuthState = () => {
   useEffect(() => {
     setInterval(() => {
       setShowComponent(!showComponent);
-    }, 500);
+    }, 700);
   }, []);
 
   return (
@@ -34,7 +37,17 @@ const AuthState = () => {
               onClick={showSignOutButton}
             >
               <div className="flex flex-row items-center">
-                <AccountCircleIcon className="m-0.5 text-[35px]" />
+                <div className="bg-black m-0.5">
+                  <img
+                    src={session?.user?.image}
+                    alt=""
+                    className="h-8 w-8 rounded-full"
+                  />
+                </div>
+                {/* <AccountCircleIcon className="m-0.5 text-[35px]">
+                  <img src={session?.user?.image} alt=""></img>
+                  <Image src={session?.user?.image} alt="img"></Image>
+                </AccountCircleIcon> */}
                 <span className="m-0.5">{session?.user?.name}</span>
                 <KeyboardArrowDownIcon className="m-0.5" />
               </div>
