@@ -15,7 +15,7 @@ const AuthState = () => {
     signoutButton?.classList.toggle("hidden");
   };
 
-  console.log(session?.user);
+  console.log(session);
 
   const login = () => {
     router.push("/login");
