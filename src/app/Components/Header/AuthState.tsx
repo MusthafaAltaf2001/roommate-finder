@@ -3,7 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/navigation";
 
-const AuthState = ({ user }: { user: Object }) => {
+const AuthState = ({ user }: { user: any }) => {
   const session = null;
   const router = useRouter();
   const [showComponent, setShowComponent] = useState(false);
