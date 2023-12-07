@@ -3,6 +3,7 @@
 import React, { useState, useRef } from "react";
 import Signout from "./Components/Header/Signout";
 import AuthState from "./Components/Header/AuthState";
+import axios from "axios";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,14 @@ const Header = () => {
     const element = document.getElementById("footer");
     element.scrollIntoView({ behavior: "smooth" });
   };
+
+  axios
+    .get("http://localhost:3001/cookies", {
+      withCredentials: true,
+    })
+    .then((res) => {
+      console.log(res);
+    });
 
   const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 

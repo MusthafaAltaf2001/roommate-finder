@@ -6,7 +6,8 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 
 const AuthState = () => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
+  const session = null;
   const router = useRouter();
   const [showComponent, setShowComponent] = useState(false);
 
@@ -15,7 +16,7 @@ const AuthState = () => {
     signoutButton?.classList.toggle("hidden");
   };
 
-  console.log(session);
+  // console.log(session);
 
   const login = () => {
     router.push("/login");

@@ -4,13 +4,14 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import GoogleIcon from "../../Assets/google_icon.svg";
 import LoginRegisterSvg from "../../Assets/login_register_img.svg";
+import axios from "axios";
 
 const Login = () => {
   const router = useRouter();
-  const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "http://localhost:3001";
 
   const googleLogin = () => {
-    router.push(`${BASE_URL}/api/auth/signin`);
+    router.push(`${BASE_URL}/auth/google/callback`);
   };
 
   const register = () => {
