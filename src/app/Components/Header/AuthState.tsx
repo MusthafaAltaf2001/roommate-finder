@@ -23,30 +23,24 @@ const AuthState = ({ user }: { user: Object }) => {
     }, 700);
   }, []);
 
-  console.log(user);
-
   return (
     <>
       {showComponent && (
         <div>
           {user ? (
             <button
-              className="absolute right-0 top-2 mx-3 w-52 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium"
+              className="absolute right-0 top-2 mx-3 w-fit rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium"
               onClick={showSignOutButton}
             >
               <div className="flex flex-row items-center">
-                <div className="bg-black m-0.5">
+                <div className="bg-black m-1">
                   <img
                     src={user?.photos[0].value}
                     alt=""
                     className="h-8 w-8 rounded-full"
                   />
                 </div>
-                {/* <AccountCircleIcon className="m-0.5 text-[35px]">
-                  <img src={session?.user?.image} alt=""></img>
-                  <Image src={session?.user?.image} alt="img"></Image>
-                </AccountCircleIcon> */}
-                <span className="m-0.5">{user.name.givenName}</span>
+                <span className="m-1">{user.name.givenName}</span>
                 <KeyboardArrowDownIcon className="m-0.5" />
               </div>
             </button>
