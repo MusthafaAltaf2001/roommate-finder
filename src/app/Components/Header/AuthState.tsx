@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
-import Image from "next/image";
 
-const AuthState = () => {
-  // const { data: session } = useSession();
+const AuthState = ({ user }: { user: Object }) => {
   const session = null;
   const router = useRouter();
   const [showComponent, setShowComponent] = useState(false);
@@ -15,8 +12,6 @@ const AuthState = () => {
     const signoutButton = document.getElementById("signoutbutton");
     signoutButton?.classList.toggle("hidden");
   };
-
-  // console.log(session);
 
   const login = () => {
     router.push("/login");
@@ -28,11 +23,13 @@ const AuthState = () => {
     }, 700);
   }, []);
 
+  console.log(user);
+
   return (
     <>
       {showComponent && (
         <div>
-          {session ? (
+          {user ? (
             <button
               className="absolute right-0 top-2 mx-3 w-52 rounded-lg border-2 border-border-colour px-1 py-0.5 font-medium"
               onClick={showSignOutButton}
@@ -40,7 +37,7 @@ const AuthState = () => {
               <div className="flex flex-row items-center">
                 <div className="bg-black m-0.5">
                   <img
-                    src={session?.user?.image}
+                    src={user?.photos[0].value}
                     alt=""
                     className="h-8 w-8 rounded-full"
                   />
@@ -49,7 +46,7 @@ const AuthState = () => {
                   <img src={session?.user?.image} alt=""></img>
                   <Image src={session?.user?.image} alt="img"></Image>
                 </AccountCircleIcon> */}
-                <span className="m-0.5">{session?.user?.name}</span>
+                <span className="m-0.5">{user.name.givenName}</span>
                 <KeyboardArrowDownIcon className="m-0.5" />
               </div>
             </button>

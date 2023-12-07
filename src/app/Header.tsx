@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Signout from "./Components/Header/Signout";
 import AuthState from "./Components/Header/AuthState";
 import axios from "axios";
@@ -8,6 +8,7 @@ import axios from "axios";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef();
+  const [user, setUser] = useState(null);
 
   const navBarToggle = () => {
     setIsOpen(!isOpen);
@@ -34,13 +35,22 @@ const Header = () => {
     element.scrollIntoView({ behavior: "smooth" });
   };
 
-  axios
-    .get("http://localhost:3001/cookies", {
-      withCredentials: true,
-    })
-    .then((res) => {
-      console.log(res);
-    });
+  const getUser = () => {
+    axios
+      .get("http://localhost:3001/auth/login/success", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUser(res.data.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const genericHamburgerLine = `h-0.5 w-6 my-0.5 rounded-full bg-dark-blue transition ease transform duration-300 z-200`;
 
@@ -63,7 +73,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <AuthState />
+      <AuthState user={user} />
       <div
         className="absolute right-0 top-14 mx-3 hidden rounded-lg border-2 border-border-colour bg-white px-4 py-2 font-medium"
         id="signoutbutton"
