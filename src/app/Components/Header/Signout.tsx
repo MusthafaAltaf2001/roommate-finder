@@ -1,19 +1,22 @@
 import React from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+
 // import useBearStore from "../../Store";
 
 const Signout = () => {
   // const bears = useBearStore((state: any) => state.bears);
+  const router = useRouter();
 
   // console.log(bears);
 
   const logout = () => {
-    axios.get("http://localhost:3001/auth/logout");
+    window.open("http://localhost:3001/auth/logout", "_self");
   };
 
   return (
     <div>
-      <button onClick={() => console.log("sign out")}>Sign Out</button>
+      <button onClick={logout}>Sign Out</button>
     </div>
   );
 };
