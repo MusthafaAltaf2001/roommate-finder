@@ -4,11 +4,13 @@ import React, { useState, useRef, useEffect } from "react";
 import Signout from "./Components/Header/Signout";
 import AuthState from "./Components/Header/AuthState";
 import axios from "axios";
+import useUserStore from "./Store";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef();
   const [user, setUser] = useState(null);
+  const setUserStore = useUserStore((state: any) => state.setUser);
 
   const navBarToggle = () => {
     setIsOpen(!isOpen);
@@ -42,6 +44,7 @@ const Header = () => {
       })
       .then((res) => {
         setUser(res.data.user);
+        setUserStore(res.data.user);
       })
       .catch((error) => {
         console.log(error);
