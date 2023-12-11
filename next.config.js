@@ -10,6 +10,7 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
+  output: "export",
 };
 
 module.exports = nextConfig;
