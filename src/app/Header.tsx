@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Signout from "./Components/Header/Signout";
 import AuthState from "./Components/Header/AuthState";
 import axios from "axios";
+import { config } from "../../url";
 import useUserStore from "./Store";
 
 const Header = () => {
@@ -38,8 +39,9 @@ const Header = () => {
   };
 
   const getUser = () => {
+    const BASE_URL = config.url.BASE_URL;
     axios
-      .get("http://localhost:3001/auth/login/success", {
+      .get(`${BASE_URL}/auth/login/success`, {
         withCredentials: true,
       })
       .then((res) => {

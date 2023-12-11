@@ -1,13 +1,13 @@
 const prod = {
   url: {
-    BASE_URL: "https://my-heroku-app.herokuapp.com/api/v1/",
-    AUTH_URL: "https://my-heroku-app.herokuapp.com/",
+    BASE_URL: "https://roommate-finder-backend.onrender.com/",
+    AUTH_URL: "https://roommate-finder-backend.onrender.com/",
   },
 };
 
 const dev = {
   url: {
-    BASE_URL: "http://localhost:3001/api/v1/",
+    BASE_URL: "http://localhost:3001/",
     AUTH_URL: "http://localhost:3001/",
   },
 };

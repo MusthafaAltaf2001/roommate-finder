@@ -1,17 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
-// import useBearStore from "../../Store";
+import { config } from "../../../../url";
 
 const Signout = () => {
-  // const bears = useBearStore((state: any) => state.bears);
   const router = useRouter();
-
-  // console.log(bears);
+  const BASE_URL = config.url.BASE_URL;
 
   const logout = () => {
-    window.open("http://localhost:3001/auth/logout", "_self");
+    window.open(`${BASE_URL}/auth/logout`, "_self");
   };
 
   return (
