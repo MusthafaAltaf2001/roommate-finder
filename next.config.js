@@ -9,6 +9,7 @@ const nextConfig = {
 
     return config;
   },
+  images: { unoptimized: true },
   reactStrictMode: true,
   output: "export",
 };
