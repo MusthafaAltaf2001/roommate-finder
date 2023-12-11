@@ -19,22 +19,22 @@ const Header = () => {
 
   const scrollToHome = () => {
     const element = document.getElementById("home");
-    element.scrollIntoView({ behavior: "smooth" });
+    // element.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToAbout = () => {
     const element = document.getElementById("about");
-    element.scrollIntoView({ behavior: "smooth" });
+    // element.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
-    element.scrollIntoView({ behavior: "smooth" });
+    // element.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToContact = () => {
     const element = document.getElementById("footer");
-    element.scrollIntoView({ behavior: "smooth" });
+    // element.scrollIntoView({ behavior: "smooth" });
   };
 
   const getUser = () => {
@@ -83,7 +83,7 @@ const Header = () => {
       >
         <Signout />
       </div>
-      <div
+      {/* <div
         ref={navRef}
         className={`absolute left-0 top-0 bg-off-white duration-500 ease-in-out ${
           isOpen ? "translate-x-0 " : "-translate-x-full"
@@ -129,7 +129,7 @@ const Header = () => {
             Contact
           </span>
         </div>
-      </div>
+      </div> */}
       <div className="z-200 absolute left-2 top-2 hidden max-md:block">
         <button
           className="group flex h-12 w-12 flex-col items-center justify-center rounded"

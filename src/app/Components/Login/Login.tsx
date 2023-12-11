@@ -61,7 +61,7 @@ const Login = () => {
         </div>
         <div className="mb-2 mt-2">
           <span className="font-bold text-dark-blue">
-            You don't have an account?
+            You don&apos;t have an account?
           </span>
           <button className="font-bold text-purple" onClick={register}>
             &nbsp;Sign up

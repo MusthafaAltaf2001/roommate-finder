@@ -10,6 +10,7 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
+  distDir: "build",
 };
 
 module.exports = nextConfig;
