@@ -1,14 +1,14 @@
 const prod = {
   url: {
-    BASE_URL: "https://roommate-finder-backend.onrender.com/",
-    AUTH_URL: "https://roommate-finder-backend.onrender.com/",
+    BASE_URL: "https://roommate-finder-backend.onrender.com",
+    AUTH_URL: "https://roommate-finder-backend.onrender.com",
   },
 };
 
 const dev = {
   url: {
-    BASE_URL: "http://localhost:3001/",
-    AUTH_URL: "http://localhost:3001/",
+    BASE_URL: "http://localhost:3001",
+    AUTH_URL: "http://localhost:3001",
   },
 };
 
