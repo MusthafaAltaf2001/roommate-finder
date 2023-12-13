@@ -7,8 +7,8 @@ const prod = {
 
 const dev = {
   url: {
-    BASE_URL: "http://localhost:3001",
-    AUTH_URL: "http://localhost:3001",
+    BASE_URL: "https://localhost:3001",
+    AUTH_URL: "https://localhost:3001",
   },
 };
 
